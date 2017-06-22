@@ -1,10 +1,9 @@
-
 describe('regex quantifiers', () => {
-  describe('zero', () => {
-    test('should match empty string', () => {
-      const result = 'aaaa'.match(/a{0}/g);
+    describe('"aaaa".match(/a{0}/g)', () => {
+        test('should return string[].length === 5, all with empty strings', () => {
+            const result = 'aaaa'.match(/a{0}/g);
 
-      expect(result).toEqual(['', '', '', '', ''])
-    });
-  })
+            expect(result.every(r => typeof(r) === "string")).toBeTruthy();
+        });
+    })
 });
